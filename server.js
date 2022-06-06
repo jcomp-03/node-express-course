@@ -2,6 +2,19 @@ const express = require('express');
 // create an instance of the express constructor, name it 'app'
 const app = express();
 
+const mockUserData = [
+    {name: 'Mark'},
+    {name: 'Jill'}
+];
+
+app.get('/users', function(req, res){
+    res.json({
+        success: true,
+        message: 'successfully got users. Nice!',
+        users: mockUserData
+    })
+})
+
 // now we can access methods used for making a server by
 // by including their name after app
 // start up the server locally on the designated port
